@@ -1,0 +1,75 @@
+@keyframes progress {
+    from { 
+        width: 0;
+        height: inherit;
+     }
+    to { 
+        width: 100%;
+        height: inherit;
+        background-color: var(--primary-base-color);
+     }
+}
+@keyframes stage {
+    from { 
+        background-color: var(--secondary-dark-color);
+    }
+    to {
+        background-color: var(--primary-base-color);
+        color: var(--primary-divider-color);
+    }
+}
+.BrogressBar {
+    width: 100%;
+    height: 80px;
+    background-color: var(--breadcrumbs-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    &-ToShipping, &-ToBilling, &-ToSuccess {
+        width: 30%;
+        height: 5px;
+        background-color: var(--secondary-dark-color);
+        display: inline-block;
+        transition: 0.5s all ease-in-out;
+    }
+    &-Shipping, &-Billing {
+        width: 5%;
+        height: 60px;
+        margin: 5px;
+        margin-top: 15px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 35px;
+        & div:first-child{
+            background-color: var(--secondary-dark-color);
+            border-radius: 50%;
+            width: 80%;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        & div:last-child{
+            font-size: 20px;
+        }
+
+    }
+}
+
+.BrogressBarAnimated{
+    animation: progress 0.8s forwards ease-in-out;
+}
+.BrogressStage{
+    // background-color: var(--primary-base-color) !important;
+    animation: stage 0.2s forwards 0.8s ease-in-out;
+    // transition-delay: 0.8s !important;
+    transition: all 0.8s ease;
+
+}
